@@ -6,5 +6,7 @@
 #mkdir $sphinx_dir/{log,data}
 
 #/usr/local/sphinx/bin/searchd -c sphinx.conf
-/usr/local/sphinx/bin/indexer --config sphinx.conf --all --rotate
+index=${1:-"--all"}
+
+/usr/local/sphinx/bin/indexer --config sphinx.conf --rotate $index
 #/usr/local/sphinx/bin/indexer --config sphinx.conf --all
